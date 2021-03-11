@@ -34,8 +34,6 @@ const writeFiles = (userSavePath, dataBody) => {
 const getFileSize = (userSavePath) => {
   fs.stat(userSavePath, (err, stats) => {
     if (err) throw err;
-    //let sizeInBytes = fileStats.size;
-    //console.log(chalk.green(sizeInBytes));
     console.log(chalk.green(`Downloaded and saved ${stats.size} bytes to ${userSavePath}.`));
   });
 };
