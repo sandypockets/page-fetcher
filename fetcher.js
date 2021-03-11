@@ -1,4 +1,4 @@
-// This program takes CLI arguments. 
+// This program takes CLI arguments.
 // node fetcher.js <Page URL to save> <Where it should be saved>
 // Example: node fetcher.js http://example.com ./index.html
 
@@ -26,13 +26,13 @@ const downloadPage = (requestURL, userSavePath) => {
 const writeFiles = (userSavePath, dataBody) => {
   fs.writeFile(userSavePath, dataBody, 'utf8', (err) => {
     if (err) throw err;
-      console.log(chalk.bgGreen('The file has been saved!'));
-      getFileSize(userSavePath);
+    console.log(chalk.bgGreen('The file has been saved!'));
+    getFileSize(userSavePath);
   });
 };
 
 const getFileSize = (userSavePath) => {
-  let fileStats = fs.stat(userSavePath, (err, stats) => {
+  fs.stat(userSavePath, (err, stats) => {
     if (err) throw err;
     //let sizeInBytes = fileStats.size;
     //console.log(chalk.green(sizeInBytes));
@@ -41,9 +41,3 @@ const getFileSize = (userSavePath) => {
 };
 
 parseUserReq(args);
-
-
-
-
-
-
